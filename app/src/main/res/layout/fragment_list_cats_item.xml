@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:textSize="20sp" >
+
+
+
+    <TextView
+        android:id="@+id/textStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:paddingStart="41dp"
+        android:textSize="20sp"
+        android:text="Утро"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginStart="33dp"
+        android:textSize="20sp"
+        android:text="теплей чем вчера"
+        app:layout_constraintBaseline_toBaselineOf="@id/textStartDate"
+        app:layout_constraintStart_toEndOf="@id/textStartDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:textSize="20sp"
+        android:text="Утро"
+        app:layout_constraintTop_toBottomOf="@id/textStartDate"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textCreatedBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:textSize="20sp"
+        android:text="Сегодня"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/view_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view_1"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Левый constraint у view_2 привязан к правой стороне view_1.
+           Constraint базовой линии view_2 — к базовой линии view_1.
+           Нижний и верхний constraint привязывать нельзя, так как есть привязка по базовой линии.
+           Правый constraint не привязан. -->
+    <TextView
+        android:id="@+id/view_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view_2"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/view_1"
+        app:layout_constraintBaseline_toBaselineOf="@id/view_1"/>
+
+    <!-- Левый constraint view_3 привязан к правой стороне view_1.
+       Верхний constraint view_3 — к нижней стороне view_1.
+       Правый и нижний constraint не привязаны. -->
+    <TextView
+        android:id="@+id/view_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view_3"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/view_1"
+        app:layout_constraintLeft_toRightOf="@id/view_1"/>
+
+    <!-- Левый constraint view_4 привязан к правой стороне view_2.
+           Нижний constraint view_4 — к нижней стороне view_2.
+           Правый и верхний constraint не привязаны. -->
+    <TextView
+        android:id="@+id/view_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view_4"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/view_1"
+        app:layout_constraintLeft_toRightOf="@id/view_2"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+<!--        tools:srcCompat="@tools:sample/avatars" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
